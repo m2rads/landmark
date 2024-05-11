@@ -9,14 +9,20 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        VStack(alignment: .leading) {
+            Text("AccessNotes")
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            HStack {
+                Text("AccessNotes:")
+                    .font(.subheadline)
+                Spacer()
+                Text("is a fun way to access your annotations")
+                    .font(.subheadline)
+            }
         }
         .padding()
     }
+    
 }
 
 #Preview {
