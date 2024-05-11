@@ -9,18 +9,32 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("AccessNotes")
-                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-            HStack {
-                Text("AccessNotes:")
+        VStack {
+            MapView()
+                .frame(height: 300)
+            CircleImageView()
+                .offset(y: -130)
+                .padding(.bottom, -130)
+            VStack(alignment: .leading) {
+                Text("AccessNotes")
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                HStack {
+                    Text("A web annotation tool that lives in your pocket:")
+                    Spacer()
+                    Text("IOS 15")
+                }
                     .font(.subheadline)
-                Spacer()
-                Text("is a fun way to access your annotations")
-                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+
+                Divider()
+                
+                Text("About AccessNotes")
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                Text("Easily make highlights and turn them into redescoverable notes")
             }
+            .padding()
         }
-        .padding()
+        Spacer()
     }
     
 }
