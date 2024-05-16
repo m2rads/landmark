@@ -8,29 +8,31 @@
 import SwiftUI
 
 struct LandmarkDetail: View {
+    var landmark: Landmark
+    
     var body: some View {
         VStack {
-            MapView()
+            MapView(coordinate: landmark.locationCoordinate)
                 .frame(height: 300)
-            CircleImageView()
+            CircleImageView(image: landmark.image)
                 .offset(y: -130)
                 .padding(.bottom, -130)
             VStack(alignment: .leading) {
-                Text("AccessNotes")
+                Text(landmark.name)
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                 HStack {
-                    Text("A web annotation tool that lives in your pocket:")
+                    Text(landmark.park)
                     Spacer()
-                    Text("IOS 15")
+                    Text(landmark.state)
                 }
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
 
                 Divider()
                 
-                Text("About AccessNotes")
+                Text("About \(landmark.name)")
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                Text("Easily make highlights and turn them into redescoverable notes")
+                Text(landmark.description)
             }
             .padding()
         }
@@ -39,5 +41,5 @@ struct LandmarkDetail: View {
 }
 
 #Preview {
-    LandmarkDetail()
+    LandmarkDetail(landmark: landmarks[0])
 }
