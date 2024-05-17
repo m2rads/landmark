@@ -14,7 +14,7 @@ struct LandmarkDetail: View {
         ScrollView {
             MapView(coordinate: landmark.locationCoordinate)
                 .frame(height: 300)
-            CircleImageView(image: landmark.image)
+            CircleImage(image: landmark.image)
                 .offset(y: -130)
                 .padding(.bottom, -130)
             VStack(alignment: .leading) {
@@ -42,5 +42,5 @@ struct LandmarkDetail: View {
 }
 
 #Preview {
-    LandmarkDetail(landmark: landmarks[0])
+    LandmarkDetail(landmark: ModelData().landmarks[0])
 }

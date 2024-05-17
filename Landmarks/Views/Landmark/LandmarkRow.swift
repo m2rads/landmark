@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LandmarkRowView: View {
+struct LandmarkRow: View {
     var landmark: Landmark
     
     var body: some View {
@@ -31,8 +31,9 @@ struct LandmarkRowView: View {
 // we need a landmark instance during initilization
 // This is due to the stored landmark propery at the top
 #Preview {
-    Group {
-        LandmarkRowView(landmark: landmarks[0])
-        LandmarkRowView(landmark: landmarks[1])
+    let landmarks = ModelData().landmarks
+    return Group {
+        LandmarkRow(landmark: landmarks[0])
+        LandmarkRow(landmark: landmarks[1])
     }
 }

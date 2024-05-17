@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CircleImageView: View {
+struct CircleImage: View {
     var image: Image
     
     var body: some View {
@@ -21,5 +21,5 @@ struct CircleImageView: View {
 }
 
 #Preview {
-    CircleImageView(image: Image("turtlerock"))
+    CircleImage(image: Image("turtlerock"))
 }
